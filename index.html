@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Goal with Intense Starry Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #000033, #000066, #000099);
+            overflow: hidden;
+            z-index: -2;
+        }
+
+        .galaxy-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                ellipse at center, 
+                rgba(100, 0, 255, 0.1) 0%, 
+                rgba(0, 0, 0, 0.5) 100%
+            );
+            animation: galaxy-rotation 60s linear infinite;
+            z-index: -1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: star-movement 10s linear infinite, 
+                       star-pulse 3s infinite alternate, 
+                       twinkle 2s infinite alternate;
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 200px;
+            background: linear-gradient(to top, rgba(255,255,255,0), white);
+            transform: rotate(-45deg);
+            animation: shooting 3s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes star-movement {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(200vh) rotate(360deg); }
+        }
+
+        @keyframes star-pulse {
+            0% { transform: scale(0.8); }
+            100% { transform: scale(1.2); }
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        @keyframes shooting {
+            0% { 
+                transform: translateX(-100vw) rotate(-45deg);
+                opacity: 1;
+            }
+            100% { 
+                transform: translateX(100vw) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes galaxy-rotation {
+            0% { transform: rotate(0deg) scale(1.2); }
+            50% { transform: rotate(180deg) scale(1); }
+            100% { transform: rotate(360deg) scale(1.2); }
+        }
+
+        .soul-goal {
+            color: white;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .soul-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .soul-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .soul-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1rem;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .soul-item:hover {
+            transform: scale(1.05);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .soul-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .additional-content {
+            padding: 2rem;
+            color: white;
+            text-align: center;
+        }
+
+        .scroll-down {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            .soul-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container" id="starContainer"></div>
+    <div class="galaxy-overlay"></div>
+
+    <div class="content-wrapper">
+        <section id="home" class="soul-goal">
+            <div class="soul-header">
+                <h1>Soul Goal</h1>
+                <p>🌀 The Guru Within: Balance the Universe Inside and Outside 🌀</p>
+            </div>
+            
+            <div class="soul-grid">
+                <div class="soul-item">
+                    <div class="soul-icon">🧘‍♂️</div>
+                    <h2>Meditation</h2>
+                    <p>🌀 Find stillness to explore the universe within and align it with the universe outside.</p>
+                </div>
+                <div class="soul-item">
+                    <div class="soul-icon">🧠</div>
+                    <h2>Controlling Your Thoughts</h2>
+                    <p>✨ Harness the power of a focused mind and master your internal dialogue.</p>
+                </div>
+                <div class="soul-item">
+                    <div class="soul-icon">🌬️</div>
+                    <h2>Breathing</h2>
+                    <p>🌱 Embrace the rhythm of life through mindful breathing exercises.</p>
+                </div>
+                <div class="soul-item">
+                    <div class="soul-icon">🤲</div>
+                    <h2>Acceptance</h2>
+                    <p>🌈 Learn the art of surrender and embrace the flow of existence.</p>
+                </div>
+                <div class="soul-item">
+                    <div class="soul-icon">🙏</div>
+                    <h2>Prayer Time</h2>
+                    <p>💫 Dedicate moments to connect with higher energy and express gratitude.</p>
+                </div>
+                <div class="soul-item">
+                    <div class="soul-icon">📖</div>
+                    <h2>Philosophy</h2>
+                    <p>🔮 Explore timeless teachings to understand life's greater meaning.</p>
+                </div>
+            </div>
+
+            <div class="scroll-down" onclick="scrollToContent()">
+                Scroll Down ▼
+            </div>
+        </section>
+
+        <section id="additional" class="additional-content">
+            <h2>Deeper Insights</h2>
+            <p>Your journey of self-discovery is an infinite exploration of consciousness.</p>
+            
+            <div class="soul-grid">
+                <div class="soul-item">
+                    <div class="soul-icon">🌈</div>
+                    <h2>Inner Peace</h2>
+                    <p>Cultivate tranquility that radiates from within, transforming your external reality.</p>
+                </div>
+                <div class="soul-item">
+                    <div class="soul-icon">🌻</div>
+                    <h2>Growth</h2>
+                    <p>Embrace challenges as opportunities for personal transformation and evolution.</p>
+                </div>
+                <div class="soul-item">
+                    <div class="soul-icon">💖</div>
+                    <h2>Compassion</h2>
+                    <p>Develop empathy and understanding for yourself and others on this cosmic journey.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function createStars() {
+            const container = document.getElementById('starContainer');
+            const starCount = 300;
+            const shootingStarCount = 5;
+
+            // Create regular stars (same as previous script)
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+
+                const size = Math.random() * 3;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+
+                const starColors = [
+                    'rgba(255,255,255,0.8)', 
+                    'rgba(255,255,255,0.6)', 
+                    'rgba(200,200,255,0.7)'
+                ];
+                star.style.backgroundColor = starColors[Math.floor(Math.random() * starColors.length)];
+                star.style.animationDelay = `${Math.random() * 10}s`;
+
+                container.appendChild(star);
+            }
+
+            // Create shooting stars
+            for (let i = 0; i < shootingStarCount; i++) {
+                const shootingStar = document.createElement('div');
+                shootingStar.classList.add('shooting-star');
+                shootingStar.style.left = `${Math.random() * 100}%`;
+                shootingStar.style.top = `${Math.random() * 100}%`;
+                shootingStar.style.animationDelay = `${Math.random() * 10}s`;
+                container.appendChild(shootingStar);
+            }
+        }
+
+        function scrollToContent() {
+            document.getElementById('additional').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        createStars();
+    </script>
+</body>
+</html>
